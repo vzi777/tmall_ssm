@@ -48,4 +48,5 @@ public interface ProductImageService {
      * @param pi
      */
     void update(ProductImage pi);
+
 }

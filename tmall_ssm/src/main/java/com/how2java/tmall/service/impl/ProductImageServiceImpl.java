@@ -44,4 +44,5 @@ public class ProductImageServiceImpl implements ProductImageService {
     public void update(ProductImage pi) {
         productImageMapper.updateByPrimaryKeySelective(pi);
     }
+
 }
