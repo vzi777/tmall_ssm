@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.how2java.tmall.mapper.CategoryMapper">
-  <resultMap id="BaseResultMap" type="com.how2java.tmall.pojo.Category">
+<mapper namespace="com.study.tmall.mapper.CategoryMapper">
+  <resultMap id="BaseResultMap" type="com.study.tmall.pojo.Category">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
@@ -37,7 +37,7 @@
   <sql id="Base_Column_List">
     id, name
   </sql>
-  <select id="selectByExample" parameterType="com.how2java.tmall.pojo.CategoryExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.study.tmall.pojo.CategoryExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -62,11 +62,11 @@
     delete from category
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.how2java.tmall.pojo.Category" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.study.tmall.pojo.Category" useGeneratedKeys="true">
     insert into category (name)
     values (#{name,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.how2java.tmall.pojo.Category" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.study.tmall.pojo.Category" useGeneratedKeys="true">
     insert into category
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -79,7 +79,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.how2java.tmall.pojo.Category">
+  <update id="updateByPrimaryKeySelective" parameterType="com.study.tmall.pojo.Category">
     update category
     <set>
       <if test="name != null">
@@ -88,7 +88,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.how2java.tmall.pojo.Category">
+  <update id="updateByPrimaryKey" parameterType="com.study.tmall.pojo.Category">
     update category
     set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

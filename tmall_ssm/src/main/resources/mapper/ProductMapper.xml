@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.how2java.tmall.mapper.ProductMapper">
-  <resultMap id="BaseResultMap" type="com.how2java.tmall.pojo.Product">
+<mapper namespace="com.study.tmall.mapper.ProductMapper">
+  <resultMap id="BaseResultMap" type="com.study.tmall.pojo.Product">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="subTitle" jdbcType="VARCHAR" property="subTitle" />
@@ -43,7 +43,7 @@
   <sql id="Base_Column_List">
     id, name, subTitle, originalPrice, promotePrice, stock, cid, createDate
   </sql>
-  <select id="selectByExample" parameterType="com.how2java.tmall.pojo.ProductExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.study.tmall.pojo.ProductExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -68,7 +68,7 @@
     delete from product
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.how2java.tmall.pojo.Product" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.study.tmall.pojo.Product" useGeneratedKeys="true">
     insert into product (name, subTitle, originalPrice, 
       promotePrice, stock, cid, 
       createDate)
@@ -76,7 +76,7 @@
       #{promotePrice,jdbcType=REAL}, #{stock,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, 
       #{createDate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.how2java.tmall.pojo.Product" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.study.tmall.pojo.Product" useGeneratedKeys="true">
     insert into product
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -125,7 +125,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.how2java.tmall.pojo.Product">
+  <update id="updateByPrimaryKeySelective" parameterType="com.study.tmall.pojo.Product">
     update product
     <set>
       <if test="name != null">
@@ -152,7 +152,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.how2java.tmall.pojo.Product">
+  <update id="updateByPrimaryKey" parameterType="com.study.tmall.pojo.Product">
     update product
     set name = #{name,jdbcType=VARCHAR},
       subTitle = #{subTitle,jdbcType=VARCHAR},

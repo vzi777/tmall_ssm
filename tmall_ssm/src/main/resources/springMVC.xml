@@ -11,7 +11,7 @@
     <!--启动注解识别-->
     <context:annotation-config/>
 
-    <context:component-scan base-package="com.how2java.tmall.controller">
+    <context:component-scan base-package="com.study.tmall.controller">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -35,12 +35,12 @@
         <mvc:interceptor>
             <mvc:mapping path="/fore*"/>
             <mvc:mapping path="/admin*"/>
-            <bean class="com.how2java.tmall.interceptor.LoginInterceptor"/>
+            <bean class="com.study.tmall.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
         <!-- 配置其他拦截器 -->
         <mvc:interceptor>
             <mvc:mapping path="/fore*"/>
-            <bean class="com.how2java.tmall.interceptor.OtherInterceptor"/>
+            <bean class="com.study.tmall.interceptor.OtherInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 </beans>
